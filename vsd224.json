@@ -1,0 +1,43 @@
+{
+
+    "__extends__": "rockchip.rk3188",
+    "recovery": {
+        "adb": true,
+        "img":"img/recovery.img",
+        "stock": "img/stock.img"
+    },
+    "__config__": {
+        "target": {
+            "device": {
+                "brand": "ViewSonic",
+                "board": "rk30sdk",
+                "name": "rk3188",
+                "manufacturer": "ViewSonic",
+                "vendor_id": ["2207"]
+            },
+            "mount": {
+                "cache": {
+                    "mount": "/cache",
+                    "fs": "ext4",
+                    "dev": "/dev/block/platform/emmc/by-name/cache",
+                    "size": 1073741824
+                },
+                "boot": {
+                    "mount": "/boot",
+                    "fs": "emmc",
+                    "dev": "/dev/block/platform/emmc/by-name/boot"
+                },
+                "system": {
+                    "mount": "/system",
+                    "fs": "ext4",
+                    "dev": "/dev/block/platform/emmc/by-name/system"
+                },
+                "recovery": {
+                    "mount": "/recovery",
+                    "fs": "emmc",
+                    "dev": "/dev/block/platform/emmc/by-name/recovery"
+                }
+            }
+        }
+    }
+}
